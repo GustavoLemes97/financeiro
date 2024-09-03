@@ -2,32 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+h1,
+h2,
+h3,
+h4,
+h5,
+a,
+span,
+p,
+small {
+  font-style: normal;
+  line-height: normal;
+  color: #4d4e4c;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+h1 {
+  font-size: 1.25rem;
+}
+
+h2,
+h3,
+h4,
+p,
+input {
+  font-size: 1rem;
+}
+
+h5,
+small {
+  font-size: 0.75rem;
+}
+
+span {
+  font-size: 0.625rem;
+}
+
+h1,
+h2,
+h3,
+h5 {
+  font-weight: 600;
+}
+
+h4,
+span {
+  font-weight: 500;
+}
+
+p,
+input,
+small {
+  font-weight: 400;
+}
+
+@media screen and (min-width: 50rem) {
+  h1 {
+    font-size: 2rem;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+  h2 {
+    font-size: 1.5rem;
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  h3,
+  h4,
+  p {
+    font-size: 1.25rem;
+  }
+
+  input {
+    font-size: 1.125rem;
+  }
+
+  h5,
+  small {
+    font-size: 1rem;
+  }
+
+  span {
+    font-size: 0.75rem;
+  }
+
+  small {
+    font-size: 1rem;
+    font-weight: 300;
   }
 }
