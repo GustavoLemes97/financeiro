@@ -88,3 +88,9 @@ small {
     font-weight: 300;
   }
 }
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
