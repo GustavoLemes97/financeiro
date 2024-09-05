@@ -5,4 +5,4 @@ export interface SvgProps {
 }
 
 export { default as LogoText } from "./LogoText";
-export { default as Logo } from "./Logo";
+export { default as Logo } from "./LogoReduzida";

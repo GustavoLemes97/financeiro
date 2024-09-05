@@ -7,6 +7,7 @@ h2,
 h3,
 h4,
 h5,
+label,
 a,
 span,
 p,
@@ -23,6 +24,7 @@ h1 {
 h2,
 h3,
 h4,
+label,
 p,
 input {
   font-size: 1rem;
@@ -45,6 +47,7 @@ h5 {
 }
 
 h4,
+label,
 span {
   font-weight: 500;
 }
@@ -66,6 +69,7 @@ small {
 
   h3,
   h4,
+  label,
   p {
     font-size: 1.25rem;
   }
