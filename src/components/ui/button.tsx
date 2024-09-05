@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center py-3 px-6 gap-2 rounded-lg hover:opacity-85 hover:transition hover:duration-300",
+  "inline-flex items-start justify-start py-3 px-6 gap-2 rounded-lg hover:opacity-85 hover:transition hover:duration-300",
   {
     variants: {
       variant: {
@@ -20,10 +20,15 @@ const buttonVariants = cva(
         default: "text-base font-medium lg:text-lg",
         thin: "text-base font-normal lg:text-lg",
       },
+      width: {
+        default: "w-auto",
+        full: "w-full",
+      },
     },
     defaultVariants: {
       variant: "default",
       font: "default",
+      width: "default",
     },
   }
 );
@@ -35,11 +40,11 @@ export interface ButtonProps
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, font, asChild = false, ...props }, ref) => {
+  ({ className, variant, font, width, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
     return (
       <Comp
-        className={cn(buttonVariants({ variant, font, className }))}
+        className={cn(buttonVariants({ variant, font, width, className }))}
         ref={ref}
         {...props}
       />

@@ -2,14 +2,30 @@ import NextLink, { LinkProps } from "next/link";
 import { Button, ButtonProps } from "./button";
 
 type Props = Omit<ButtonProps, "onClick" | "onMouseEnter" | "onTouchStart"> &
-  LinkProps;
+  LinkProps & {
+    target?: React.HTMLAttributeAnchorTarget;
+  };
 
-export function Link({ href, children }: Props) {
-  return (
-    <Button asChild>
-      <NextLink href={href} target="_blank" rel="noopener noreferrer">
-        {children}
-      </NextLink>
-    </Button>
-  );
-}
+const Link = ({
+  href,
+  children,
+  width,
+  font,
+  variant,
+  target = "_blank",
+  className,
+}: Props) => (
+  <Button
+    asChild
+    width={width}
+    font={font}
+    variant={variant}
+    className={className}
+  >
+    <NextLink href={href} target={target} rel="noopener noreferrer">
+      {children}
+    </NextLink>
+  </Button>
+);
+
+export { Link };
