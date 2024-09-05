@@ -1,10 +1,10 @@
 "use client";
-import { Input } from "@/components/ui/input";
 import { InputWithLabel } from "@/components/ui/inputWithLabel";
+import { Select } from "@/components/ui/select";
 
 export default function Home() {
   return (
-    <main className="p-0">
+    <main className="p-10 flex flex-col gap-4">
       <InputWithLabel
         labelName={"Input"}
         onChange={() => console.log("teste")}
@@ -12,11 +12,14 @@ export default function Home() {
         id={"email"}
         placeholder={"Input"}
       />
-      <Input
+
+      <hr />
+
+      <Select
+        items={["Cartão", "Dinheiro", "Aluguel"]}
+        label={"Tipos de conta"}
+        placeholder={"Tipos de conta"}
         onChange={() => console.log("teste")}
-        type={"password"}
-        id={"password"}
-        placeholder={"Password"}
       />
     </main>
   );
