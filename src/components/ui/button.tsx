@@ -15,6 +15,7 @@ const buttonVariants = cva(
           "text-grey border border-soft-grey-2 bg-white hover:border-grey",
         grey: "text-grey border border-grey bg-soft-grey",
         small: "py-2 px-4 text-grey bg-yellow",
+        "date-day": "px-2 py-1 text-grey",
       },
       font: {
         default: "text-base font-medium lg:text-lg",

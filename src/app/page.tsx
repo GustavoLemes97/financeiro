@@ -1,4 +1,5 @@
 "use client";
+import { DatePicker } from "@/components/ui/datePicker";
 import { InputWithLabel } from "@/components/ui/inputWithLabel";
 import { Select } from "@/components/ui/select";
 
@@ -21,6 +22,8 @@ export default function Home() {
         placeholder={"Tipos de conta"}
         onChange={() => console.log("teste")}
       />
+
+      <DatePicker />
     </main>
   );
 }
