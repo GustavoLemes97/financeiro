@@ -12,7 +12,7 @@ const buttonVariants = cva(
         default: "text-white bg-grey",
         selected: "text-grey bg-yellow",
         filter:
-          "text-grey border border-soft-grey-2 bg-white hover:border-grey",
+          "text-grey border border-soft-grey-2 bg-white",
         grey: "text-grey border border-grey bg-soft-grey",
         small: "py-2 px-4 text-grey bg-yellow",
         "date-day": "px-2 py-1 text-grey",

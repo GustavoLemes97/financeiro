@@ -35,10 +35,9 @@ function Calendar({
         nav_button_next: "absolute right-1",
         table: "w-full border-collapse space-y-1",
         head_row: "flex",
-        head_cell:
-          "text-neutral-500 rounded-md w-9 font-normal text-[0.8rem] dark:text-neutral-400",
+        head_cell: "text-neutral-500 rounded-md w-9 font-normal text-[0.8rem]",
         row: "flex w-full mt-2",
-        cell: "h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-neutral-100/50 [&:has([aria-selected])]:bg-neutral-100 first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20 dark:[&:has([aria-selected].day-outside)]:bg-neutral-800/50 dark:[&:has([aria-selected])]:bg-neutral-800",
+        cell: "h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-neutral-100/50 [&:has([aria-selected])]:bg-neutral-100 first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20",
         day: cn(
           buttonVariants({ variant: "date-day" }),
           "h-9 w-9 font-normal aria-selected:opacity-100"
@@ -47,9 +46,9 @@ function Calendar({
         day_selected: "bg-yellow text-grey",
         day_today: "",
         day_outside: "day-outside text-soft-grey-2",
-        day_disabled: "text-neutral-500 opacity-50 dark:text-neutral-400",
+        day_disabled: "text-neutral-500 opacity-50",
         day_range_middle:
-          "aria-selected:bg-neutral-100 aria-selected:text-neutral-900 dark:aria-selected:bg-neutral-800 dark:aria-selected:text-neutral-50",
+          "aria-selected:bg-neutral-100 aria-selected:text-neutral-900",
         day_hidden: "invisible",
         ...classNames,
       }}
