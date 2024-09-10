@@ -1,5 +1,5 @@
 "use client";
-import { mainPages, configPages } from "@/app/constants";
+import { mainPages, configPages } from "@/constants";
 import { useState } from "react";
 import { SideBarHeader } from "./sideBarHeader";
 import { SideBarMenu } from "./sideBarMenu";

@@ -1,5 +1,5 @@
 import { Link } from "./link";
-import { MenuItem } from "@/app/constants";
+import { MenuItem } from "@/constants";
 
 interface SideBarMenuProps {
   items: MenuItem[];
