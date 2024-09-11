@@ -61,7 +61,9 @@ const TablePagination = ({
   return (
     <section
       className={`${
-        totalPages > 0 ? "flex w-full items-center justify-between" : "hidden"
+        totalPages > 0
+          ? "flex w-full items-center justify-center lg:justify-between"
+          : "hidden"
       }`}
     >
       <span className="hidden lg:block">
