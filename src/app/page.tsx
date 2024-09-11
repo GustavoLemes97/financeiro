@@ -1,7 +1,12 @@
 "use client";
 
-import { ProfitText } from "@/components/ui/profitText";
+import { ProfitCard } from "@/components/ui/profitCard";
+
 
 export default function Home() {
-  return <ProfitText oldMonthTotal={10} currentMonthTotal={15} />;
+  return <>
+  <ProfitCard yellow={"cardOne"} />
+  <ProfitCard yellow={"cardTwo"} />
+  <ProfitCard grey={"cardOne"} textColor="white" />
+  <ProfitCard grey={"cardTwo"} textColor="white" /></>;
 }

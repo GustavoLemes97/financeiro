@@ -27,6 +27,12 @@ const config: Config = {
         lg: "85.375rem",
         xl: "120rem",
       },
+      backgroundImage: {
+        "yellow-card-1": "url('../../public/profit-card-1.png')",
+        "yellow-card-2": "url('../../public/profit-card-2.png')",
+        "grey-card-1": "url('../../public/profit-card-3.png')",
+        "grey-card-2": "url('../../public/profit-card-4.png')",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
