@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={mont.className}>{children}</body>
+      <body className={`${mont.className} bg-soft-grey-2`}>{children}</body>
     </html>
   );
 }
