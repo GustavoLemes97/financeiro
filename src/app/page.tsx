@@ -1,12 +1,13 @@
 "use client";
 
-import { ProfitCard } from "@/components/ui/profitCard";
-
+import { SectionTitle } from "@/components/ui/sectionTitle";
+import { CircleAlertIcon } from "lucide-react";
 
 export default function Home() {
-  return <>
-  <ProfitCard yellow={"cardOne"} />
-  <ProfitCard yellow={"cardTwo"} />
-  <ProfitCard grey={"cardOne"} textColor="white" />
-  <ProfitCard grey={"cardTwo"} textColor="white" /></>;
+  return (
+    <SectionTitle
+      title={"TESTE"}
+      icon={<CircleAlertIcon className="w-6 h-6" />}
+    />
+  );
 }
