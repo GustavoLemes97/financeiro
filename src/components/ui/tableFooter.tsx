@@ -16,6 +16,7 @@ const TableFooter = ({
       {hasButton && (
         <Button
           variant={"selected"}
+          font={"thin"}
           className="w-full max-w-[20rem] items-center justify-center lg:hidden"
         >
           <Plus className="w-5 h-5" />

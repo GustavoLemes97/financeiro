@@ -5,14 +5,15 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-start justify-start py-3 px-6 gap-2 rounded-lg hover:opacity-85 hover:transition hover:duration-300",
+  "inline-flex items-center justify-start py-3 px-6 gap-2 rounded-lg hover:opacity-85 hover:transition hover:duration-300",
   {
     variants: {
       variant: {
         default: "text-white bg-grey",
         selected: "text-grey bg-yellow",
-        filter:
-          "text-grey border border-soft-grey-2 bg-white",
+        unselected: "text-grey bg-white",
+        ghost: "p-0 text-grey",
+        filter: "text-grey border border-soft-grey-2 bg-white",
         grey: "text-grey border border-grey bg-soft-grey",
         small: "py-2 px-4 text-grey bg-yellow",
         "date-day": "px-2 py-1 text-grey",
