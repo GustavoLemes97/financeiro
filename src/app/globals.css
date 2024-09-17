@@ -98,3 +98,23 @@ small {
     --radius: 0.5rem;
   }
 }
+
+.recharts-responsive-container {
+  width: 160px !important; 
+  height: 124px !important;
+}
+
+.recharts-wrapper {
+  right: 20px !important;
+}
+
+@media screen and (min-width: 85rem) {
+  .recharts-responsive-container {
+    width: 250px !important; 
+    height: 170px !important;
+  }
+  
+  .recharts-wrapper {
+    right: 45px !important;
+  }
+}

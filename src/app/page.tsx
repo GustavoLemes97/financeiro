@@ -1,9 +1,15 @@
 "use client";
 
-import { TableFooter } from "@/components/ui/tableFooter";
-import { TableHeader } from "@/components/ui/tableHeader";
-import { TableTab } from "@/components/ui/tableTab";
+import { ChartCard } from "@/components/ui/PieChartCard";
 
 export default function Home() {
-  return <TableHeader hasButton={false} hasTab={false} />;
+  const data = [
+    { name: "Cartão de Credito", value: 500 },
+    { name: "Aluguel", value: 400 },
+    { name: "Água e esgoto", value: 300 },
+    { name: "Tecnologia", value: 200 },
+    { name: "Sócios", value: 100.5 },
+  ];
+
+  return <ChartCard data={data} title={"Valores a receber"} />;
 }
