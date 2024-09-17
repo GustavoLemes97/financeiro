@@ -1,6 +1,5 @@
 import { TooltipProps } from "recharts";
 import {
-  Legend,
   Pie,
   PieChart as PieChartRecharts,
   ResponsiveContainer,
@@ -64,8 +63,8 @@ const PieChart = ({ data }: PieChartProps) => {
 
   return (
     <section className="flex w-full justify-between items-end">
-      <ResponsiveContainer>
-        <PieChartRecharts>
+      <ResponsiveContainer className="!w-[160px] !h-[124px] lg:!w-[250px] lg:!h-[170px] aspect-video">
+        <PieChartRecharts className="!right-[20px] lg:!right-[45px]">
           <Pie
             data={dataWithFill}
             dataKey="value"

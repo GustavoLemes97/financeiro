@@ -1,6 +1,6 @@
 "use client";
 
-import { ChartCard } from "@/components/ui/PieChartCard";
+import { PieChartCard } from "@/components/ui/pieChartCard";
 
 export default function Home() {
   const data = [
@@ -11,5 +11,5 @@ export default function Home() {
     { name: "Sócios", value: 100.5 },
   ];
 
-  return <ChartCard data={data} title={"Valores a receber"} />;
+  return <PieChartCard data={data} title={"Valores a receber"} />;
 }

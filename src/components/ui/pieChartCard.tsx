@@ -2,12 +2,12 @@ import { SectionTitle } from "./sectionTitle";
 import { ChartData, PieChart } from "./pieChart";
 import { formatCurrency } from "@/utils/currencyUtils";
 
-interface ChartCardProps {
+interface PieChartCardProps {
   title: string;
   data: ChartData[];
 }
 
-const ChartCard = ({ title, data }: ChartCardProps) => {
+const PieChartCard = ({ title, data }: PieChartCardProps) => {
   const totalValue = formatCurrency(
     data.reduce((accumulator, current) => {
       return accumulator + current.value;
@@ -25,4 +25,4 @@ const ChartCard = ({ title, data }: ChartCardProps) => {
   );
 };
 
-export { ChartCard };
+export { PieChartCard };
