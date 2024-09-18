@@ -12,13 +12,13 @@ import {
 import { PieChartLegend } from "./pieChartLegend";
 import { formatCurrency } from "@/utils/currencyUtils";
 
-export interface ChartData {
+interface PieChartData {
   name: string;
   value: number;
 }
 
-interface PieChartProps {
-  data: ChartData[];
+export interface PieChartProps {
+  data: PieChartData[];
 }
 
 const CustomTooltip = ({

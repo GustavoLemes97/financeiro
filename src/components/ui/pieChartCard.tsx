@@ -1,10 +1,9 @@
 import { SectionTitle } from "./sectionTitle";
-import { ChartData, PieChart } from "./pieChart";
+import { PieChart, PieChartProps } from "./pieChart";
 import { formatCurrency } from "@/utils/currencyUtils";
 
-interface PieChartCardProps {
+interface PieChartCardProps extends PieChartProps {
   title: string;
-  data: ChartData[];
 }
 
 const PieChartCard = ({ title, data }: PieChartCardProps) => {

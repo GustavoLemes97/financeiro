@@ -1,92 +1,87 @@
+import { formatCurrency } from "@/utils/currencyUtils";
 import {
   ResponsiveContainer,
   BarChart as BarChartRecharts,
-  CartesianGrid,
   XAxis,
   YAxis,
   Tooltip,
-  Legend,
   Bar,
-  Rectangle,
+  TooltipProps,
 } from "recharts";
+import {
+  NameType,
+  ValueType,
+} from "recharts/types/component/DefaultTooltipContent";
 
-const data = [
-  {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: "Page B",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: "Page C",
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: "Page D",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: "Page E",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: "Page F",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: "Page G",
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
+interface BarChartData {
+  name: string;
+  receiving: number;
+  payments: number;
+}
 
-interface BarChartProps {}
+export interface BarChartProps {
+  data: BarChartData[];
+}
 
-const BarChart = ({}: BarChartProps) => {
+const CustomTooltip = ({
+  active,
+  payload,
+}: TooltipProps<ValueType, NameType>) => {
+  if (active && payload && payload.length) {
+    const { name, receiving, payments } = payload[0].payload;
+
+    return (
+      <section className="flex flex-col gap-1 w-full bg-white border border-soft-grey-2 rounded px-2">
+        <h5>{name}</h5>
+        <div className="flex items-center gap-1 justify-between w-full">
+          <span className="text-grey-2 text-xs">Recebimentos:</span>
+          <span className="font-semibold text-xs">
+            {formatCurrency(Number(receiving))}
+          </span>
+        </div>
+        <div className="flex items-center gap-1 justify-between w-full">
+          <span className="text-grey-2 text-xs">Pagamentos:</span>
+          <span className="font-semibold text-xs">
+            {formatCurrency(Number(payments))}
+          </span>
+        </div>
+      </section>
+    );
+  }
+
+  return null;
+};
+
+const BarChart = ({ data }: BarChartProps) => {
+  const grey = "#4D4E4C";
+  const yellow = "#F6BE25";
   return (
     <section className="">
-      <ResponsiveContainer width={700} height={700}>
+      <ResponsiveContainer className="!w-[98vw] !h-[10.875rem] md:!h-[14.75rem]">
         <BarChartRecharts
-          width={700}
-          height={700}
+          className="!right-[30px]"
           data={data}
+          barGap="100%"
           margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
+            top: 0,
+            right: 0,
+            left: 0,
+            bottom: -10,
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar
-            dataKey="pv"
-            fill="#8884d8"
-            activeBar={<Rectangle fill="pink" stroke="blue" />}
+          <XAxis
+            dataKey="name"
+            tick={{ fill: grey, fontSize: 12 }}
+            tickFormatter={(value) => value.slice(0, 3)}
+            type="category"
           />
-          <Bar
-            dataKey="uv"
-            fill="#82ca9d"
-            activeBar={<Rectangle fill="gold" stroke="purple" />}
+          <YAxis
+            tick={{ fill: grey, fontSize: 12 }}
+            tickFormatter={(value) => `${value / 1000}k`}
           />
+          <Tooltip content={<CustomTooltip />} />
+          <Bar dataKey="payments" barSize={30} fill={yellow} />
+          <Bar dataKey="receiving" barSize={30} fill={grey} />
         </BarChartRecharts>
       </ResponsiveContainer>
     </section>
