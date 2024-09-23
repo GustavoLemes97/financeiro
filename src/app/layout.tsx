@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${mont.className} bg-black`}>{children}</body>
+      <body className={`${mont.className} bg-white`}>{children}</body>
     </html>
   );
 }
