@@ -12,7 +12,7 @@ const renderTableCells = <T extends object>(item: T) => {
       key={index}
       className={`${
         tableDataColor[value] ?? "text-grey"
-      } text-center px-4 pb-1 pt-5 font-semibold text-base border-b border-b-soft-grey-2 min-w-[100vw] md:min-w-[50vw] lg:min-w-full`}
+      } text-center px-4 pb-1 pt-5 font-semibold text-base border-b border-b-soft-grey-2 min-w-[93vw] md:min-w-[50vw] lg:min-w-full`}
     >
       {value}
     </td>
@@ -24,7 +24,7 @@ const TableBody = <T extends object>({
   hasActions = true,
 }: TableBodyProps<T>) => {
   return (
-    <tbody>
+    <tbody className="bg-white">
       {data.map((item, index) => (
         <tr key={index}>
           {renderTableCells(item)}

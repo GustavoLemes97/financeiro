@@ -10,14 +10,14 @@ const TableHead = ({ theadTitles, hasActions }: TableHeadProps) => {
     <thead>
       <tr>
         {theadTitles.map((title) => (
-          <th key={title} className="px-4 py-3 text-grey-2">
+          <th key={title} className="bg-white px-4 py-3 text-grey-2">
             <div className="inline-flex items-center justify-center gap-2">
               {title}
               <ArrowDownUp className="w-5 h-5" />
             </div>
           </th>
         ))}
-        {hasActions && <th className="px-4 py-3" />}
+        {hasActions && <th className="bg-white  px-4 py-3" />}
       </tr>
     </thead>
   );

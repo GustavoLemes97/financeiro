@@ -8,3 +8,11 @@ export const formatCurrency = (value: number) => {
 
   return formatter.format(value);
 };
+
+export const stringCurrencyToNumber = (value: string) => {
+  const cleanedString = value.replace(/[^\d,]/g, "");
+  const decimalString = cleanedString.replace(",", ".");
+  const numberValue = parseFloat(decimalString);
+
+  return numberValue;
+};
