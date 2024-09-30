@@ -1,11 +1,13 @@
-import { entriesMock } from "@/mocks/entriesMock";
+import { Entry } from "@/mocks/entriesMock";
 import { TableBody } from "./tableBody";
 import { TableFooter } from "./tableFooter";
 import { TableHead } from "./tableHead";
 import { TableHeader } from "./tableHeader";
 import { stringCurrencyToNumber } from "@/utils/currencyUtils";
 
-interface EntriesTableProps {}
+interface EntriesTableProps {
+  data: Entry[];
+}
 
 const titles = [
   "Data de vencimento",
@@ -15,8 +17,8 @@ const titles = [
   "Valor",
 ];
 
-const EntriesTable = ({}: EntriesTableProps) => {
-  const totalValue = entriesMock.reduce((acc, entry) => {
+const EntriesTable = ({ data }: EntriesTableProps) => {
+  const totalValue = data.reduce((acc, entry) => {
     const value = stringCurrencyToNumber(entry.value);
     return acc + value;
   }, 0);
@@ -27,7 +29,7 @@ const EntriesTable = ({}: EntriesTableProps) => {
       <div className="overflow-x-auto overflow-y-scroll no-scrollbar ">
         <table className="w-full min-w-max">
           <TableHead hasActions={true} theadTitles={titles} />
-          <TableBody hasActions={true} data={entriesMock} />
+          <TableBody hasActions={true} data={data} />
         </table>
       </div>
       <TableFooter hasButton hasTotalTransaction totalValue={totalValue} />
