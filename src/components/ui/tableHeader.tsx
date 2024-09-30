@@ -9,7 +9,7 @@ interface TableHeaderProps {
 
 const TableHeader = ({ hasButton = true, hasTab = true }: TableHeaderProps) => {
   return (
-    <section className="flex flex-col items-start w-full py-4 lg:bg-white lg:px-4 gap-4">
+    <section className="flex flex-col items-start w-full py-4 lg:bg-white gap-4">
       {hasTab && <TableTab />}
       <section className="flex items-center justify-end w-full gap-4 ">
         <Button className="" variant={"ghost"} font={"thin"}>
@@ -24,7 +24,7 @@ const TableHeader = ({ hasButton = true, hasTab = true }: TableHeaderProps) => {
           <Button
             variant={"selected"}
             font={"thin"}
-            className="items-center justify-center"
+            className="items-center justify-center hidden md:inline-flex"
           >
             <Plus className="w-5 h-5" />
             Novo Lançamento

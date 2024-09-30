@@ -12,6 +12,7 @@ import {
   NameType,
   ValueType,
 } from "recharts/types/component/DefaultTooltipContent";
+import { BarChartLegend } from "./barChartLegend";
 
 interface BarChartData {
   name: string;
@@ -56,7 +57,7 @@ const BarChart = ({ data }: BarChartProps) => {
   const grey = "#4D4E4C";
   const yellow = "#F6BE25";
   return (
-    <section className="">
+    <section className="flex flex-col items-center justify-center">
       <ResponsiveContainer className="!w-[98vw] !h-[10.875rem] md:!h-[14.75rem]">
         <BarChartRecharts
           className="!right-[30px]"
@@ -80,10 +81,11 @@ const BarChart = ({ data }: BarChartProps) => {
             tickFormatter={(value) => `${value / 1000}k`}
           />
           <Tooltip content={<CustomTooltip />} />
-          <Bar dataKey="payments" barSize={30} fill={yellow} />
-          <Bar dataKey="receiving" barSize={30} fill={grey} />
+          <Bar dataKey="receiving" barSize={30} fill={yellow} />
+          <Bar dataKey="payments" barSize={30} fill={grey} />
         </BarChartRecharts>
       </ResponsiveContainer>
+      <BarChartLegend />
     </section>
   );
 };

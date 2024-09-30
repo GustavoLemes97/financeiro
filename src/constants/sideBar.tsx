@@ -8,7 +8,12 @@ import {
   SquareChartGantt,
   Settings,
 } from "lucide-react";
-import { MenuItem } from ".";
+
+export interface MenuItem {
+  name: string;
+  href: string;
+  icon: React.ReactNode;
+}
 
 export const mainPages: MenuItem[] = [
   {

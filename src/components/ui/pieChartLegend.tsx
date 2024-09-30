@@ -24,7 +24,7 @@ const PieChartLegend = ({ data }: PieChartLegendProps) => {
           key={name}
         >
           <span
-            className={`${colorVariants[fill]} inline-block w-[0.9375rem] h-[0.625rem] lg:w-[1.875rem] lg:h-[1.25rem]`}
+            className={`${colorVariants[fill]} inline-block w-[0.9375rem] h-[0.625rem]`}
           ></span>
           <small className="w-[10ch] block overflow-hidden overflow-ellipsis whitespace-nowrap">
             {name}
