@@ -1,4 +1,12 @@
-export const entriesMock = [
+export interface Entry {
+  dueDate: string;
+  accountType: string;
+  description: string;
+  transactionStatus: string;
+  value: string;
+}
+
+export const entriesMock: Entry[] = [
   {
     dueDate: "2024-09-01",
     accountType: "Rent",
